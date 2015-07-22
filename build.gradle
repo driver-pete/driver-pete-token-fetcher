@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+jar {
+    baseName = 'driver-peter-token-fetcher'
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+}
+
+eclipse {
+  jdt {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+  }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile('org.apache.httpcomponents:httpclient:4.3')
+    testCompile('net.sourceforge.htmlunit:htmlunit:2.15')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
