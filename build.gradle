@@ -1,5 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "com.otognan.driverpete.token_fetcher.TokenFetcher"
 
 jar {
     baseName = 'driver-peter-token-fetcher'
