@@ -1,11 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.rholder:gradle-one-jar:1.0.4'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
+apply plugin: 'gradle-one-jar'
 
 mainClassName = "com.otognan.driverpete.token_fetcher.TokenFetcher"
 
+task oneJar(type: OneJar) {
+    mainClass = mainClassName
+    archiveName = 'driver-pete-token-fetcher.jar'
+}
+
 jar {
-    baseName = 'driver-peter-token-fetcher'
+    baseName = '_single_fetcher_jar'
     sourceCompatibility = 1.7
     targetCompatibility = 1.7
     manifest {
@@ -25,8 +40,9 @@ repositories {
 }
 
 dependencies {
-    testCompile('org.apache.httpcomponents:httpclient:4.3')
-    testCompile('net.sourceforge.htmlunit:htmlunit:2.15')
+    compile('commons-cli:commons-cli:1.3.1')
+    compile('org.apache.httpcomponents:httpclient:4.3')
+    compile('net.sourceforge.htmlunit:htmlunit:2.15')
 }
 
 task wrapper(type: Wrapper) {
