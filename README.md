@@ -12,4 +12,5 @@ usage: driver-pete-token-fetcher
  -pass <arg>      Facebook password
 
 Example:
-java -jar driver-pete-token-fetcher.jar -address https://localhost:8443 -email <FACEBOOK_EMAIL> -pass <FACEBOOK_PASSWORD>
+
+```java -jar driver-pete-token-fetcher.jar -address https://localhost:8443 -email <FACEBOOK_EMAIL> -pass <FACEBOOK_PASSWORD>```
